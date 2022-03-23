@@ -6,8 +6,28 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^@src/(.*)$": "<rootDir>/src/$1"
+    },
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "transform": {
+      "node_modules/variables/.+\\.(j|t)sx?$": "ts-jest"
+    }
+  },
   "keywords": [],
-  "author": "",
+  "author": "Bernardo Moraes Silva",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^27.4.1",
@@ -25,6 +45,7 @@
     "eslint-plugin-promise": "^5.2.0",
     "jest": "^27.5.1",
     "prettier": "^2.6.0",
+    "ts-jest": "^27.1.3",
     "typescript": "^4.6.2"
   }
 }
