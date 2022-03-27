@@ -22,6 +22,11 @@ export default class BTHeigth {
       return this.recursiveBuildTree(queue, node.left);
     }
 
+    if (current > node.value && !node.right) {
+      node.right = { value: current };
+      return this.recursiveBuildTree(queue, node.right);
+    }
+
     return node;
   }
 
