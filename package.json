@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "ts-node": "ts-node",
+    "tsc": "tsc",
+    "test": "jest --passWithNoTests --no-cache --runInBand",
+    "env:dev": "docker-compose up --build",
+    "env:bash": "docker-compose exec app bash"
   },
   "type": "module",
   "jest": {
